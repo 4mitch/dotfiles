@@ -39,8 +39,6 @@ function main() {
   has_tag "$tags" "x86" && { update_dotfiles_x86; }
   has_tag "$tags" "android" && { update_dotfiles_android; }
 
-  exit 0
-
   update_dotfiles_pos;
 }
 
@@ -100,11 +98,13 @@ update_dotfiles_common() {
 update_dotfiles_osx() {
   echo "Configuring for OSX..."
   update_dotfiles "conf.osx.yaml"
+  install_docopts "darwin_amd64"
 }
 
 update_dotfiles_linux() {
   echo "Configuring for Linux..."
   update_dotfiles "conf.linux.yaml"
+  install_docopts "linux_amd64"
 }
 
 update_dotfiles_arm() {
@@ -117,6 +117,7 @@ update_dotfiles_x86() {
 
 update_dotfiles_android() {
   echo "No custom config for Android"
+  install_docopts "android_amd64"
 }
 
 main "$@"

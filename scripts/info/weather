@@ -11,6 +11,7 @@ source "${DOTFILES}/scripts/core/main.sh"
 ##?    weather [<location>]
 
 docs::eval "$@"
+exit 0
 
 _format() {
   echo "$@" | grep -v "New feature" | grep -v Follow
