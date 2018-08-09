@@ -5,6 +5,7 @@
 alias o="dot_or_args open --"
 alias r="dot_or_args ranger --"
 
+
 # ===============
 # listing
 # ===============
